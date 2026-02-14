@@ -9,8 +9,9 @@ xsetroot -solid blue
   --disable-dev-shm-usage \
   --no-sandbox &
 
-# Wait for Chrome to start
-sleep 2
+# Wait for Chrome to start and CDP to be ready
+# Chrome typically starts within 3-5 seconds
+sleep 5
 
 # Start MCP server connected to Chrome's CDP endpoint
 npx -y @playwright/mcp --config /config/config.json --cdp-endpoint http://localhost:9222
