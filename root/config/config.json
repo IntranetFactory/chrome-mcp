@@ -1,6 +1,6 @@
 {
     "browser": {
-        "isolated": true,
+        "isolated": false,
         "cdpEndpoint": "http://localhost:9222",
         "launchOptions": {
             "headless": false
