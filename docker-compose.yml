@@ -1,6 +1,7 @@
 services:
   chrome-mcp:
-    image: ghcr.io/bradsjm/chrome-mcp:latest
+    build: .
+    image: chrome-mcp:latest
     container_name: chrome-mcp
     # ports:
       # - "3000:3000"  # VNC HTTP
