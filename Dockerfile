@@ -9,6 +9,11 @@ ENV TITLE=Playwright
 ENV START_DOCKER=false
 ENV NO_DECOR=true
 
+# Suppress Chrome/DBus errors
+ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
+ENV CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
+ENV DISPLAY=:1
+
 # Use ARGs for versions to make updates easy and explicit
 ARG UV_VERSION=0.8.3
 ARG NODE_VERSION=20.x
