@@ -29,7 +29,24 @@ The container is automatically built for x86_64 architecture and published to Gi
 docker pull ghcr.io/bradsjm/chrome-mcp:latest
 ```
 
-### Run the Container
+### Deploy with Dokploy (Recommended)
+
+Use the included `docker-compose.yml` file to deploy on Dokploy. Dokploy will handle port mapping and routing automatically.
+
+### Run with Docker Compose
+
+For local development or manual deployment:
+
+```bash
+docker compose up -d
+```
+
+To stop the container:
+```bash
+docker compose down
+```
+
+### Run with Docker CLI
 
 ```bash
 docker run -d \

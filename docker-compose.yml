@@ -1,0 +1,10 @@
+services:
+  chrome-mcp:
+    image: ghcr.io/bradsjm/chrome-mcp:latest
+    container_name: chrome-mcp
+    volumes:
+      - ./config:/config
+    restart: unless-stopped
+    environment:
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
