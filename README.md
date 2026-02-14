@@ -29,7 +29,18 @@ The container is automatically built for x86_64 architecture and published to Gi
 docker pull ghcr.io/bradsjm/chrome-mcp:latest
 ```
 
-### Run the Container
+### Run with Docker Compose (Recommended)
+
+```bash
+docker compose up -d
+```
+
+To stop the container:
+```bash
+docker compose down
+```
+
+### Run with Docker CLI
 
 ```bash
 docker run -d \

@@ -1,0 +1,14 @@
+services:
+  chrome-mcp:
+    image: ghcr.io/bradsjm/chrome-mcp:latest
+    container_name: chrome-mcp
+    ports:
+      - "3000:3000"  # KasmVNC web desktop (HTTP)
+      - "3001:3001"  # KasmVNC web desktop (HTTPS)
+      - "3002:3002"  # Playwright MCP server
+    volumes:
+      - ./config:/config
+    restart: unless-stopped
+    environment:
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
