@@ -10,11 +10,11 @@ Applications and commands that automatically execute when the desktop environmen
 **Current configuration:**
 ```bash
 xsetroot -solid blue
-npx -y @playwright/mcp --config /config/config.json
+npx -y @playwright/mcp --config /config/config.json --host 0.0.0.0 --port 3002 --allowed-hosts *
 ```
 
 - **`xsetroot -solid blue`**: Sets the desktop background to solid blue
-- **`npx -y @playwright/mcp --config /config/config.json`**: Starts the Playwright MCP server with the specified configuration
+- **`npx -y @playwright/mcp --config /config/config.json --host 0.0.0.0 --port 3002 --allowed-hosts *`**: Starts the Playwright MCP server with the specified configuration, binding to all interfaces and allowing all hosts
 
 ### `menu.xml`
 Defines the right-click context menu for the desktop environment using OpenBox menu format.
@@ -29,7 +29,7 @@ Defines the right-click context menu for the desktop environment using OpenBox m
 Edit `autostart` to include additional commands that should run when the desktop loads:
 ```bash
 xsetroot -solid blue
-npx -y @playwright/mcp --config /config/config.json
+npx -y @playwright/mcp --config /config/config.json --host 0.0.0.0 --port 3002 --allowed-hosts *
 # Add your commands here
 /usr/bin/your-application &
 ```

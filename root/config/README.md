@@ -12,6 +12,7 @@ Main configuration file for the Playwright MCP server.
 {
     "browser": {
         "isolated": true,
+        "cdpEndpoint": "http://localhost:9222",
         "launchOptions": {
             "headless": false
         },
@@ -19,13 +20,14 @@ Main configuration file for the Playwright MCP server.
     },
     "server": {
         "port": 3002,
-        "host": "0.0.0.0"
+        "host": "0.0.0.0",
+        "allowedHosts": ["*"]
     },
     "capabilities": ["pdf", "vision"],
     "outputDir": "/config/output",
     "imageResponses": "allow",
     "network": {
-        "allowedOrigins": [],
+        "allowedOrigins": ["*"],
         "blockedOrigins": []
     }
 }
@@ -56,6 +58,8 @@ The MCP server can connect to an existing Chrome instance via CDP (Chrome DevToo
 ### Server Settings
 - **`port: 3002`**: MCP server listens on this port
 - **`host: "0.0.0.0"`**: Accepts connections from any IP (required for container networking)
+- **`allowedHosts: ["*"]`**: Allows connections from any host (required for external access)
+- **Note**: Command-line arguments `--host 0.0.0.0 --port 3002 --allowed-hosts *` should also be passed when starting the MCP server
 
 ### Capabilities
 - **`pdf`**: Enables PDF generation from web pages
@@ -65,7 +69,7 @@ The MCP server can connect to an existing Chrome instance via CDP (Chrome DevToo
 - **`outputDir`**: Directory for saving automation artifacts
 - **`imageResponses: "allow"`**: Permits image-based responses
 
-### Network Security
+### Network Securit: ["*"]`**: Allows all origins (use specific domains for production
 - **`allowedOrigins`**: Whitelist of allowed domains (empty = all allowed)
 - **`blockedOrigins`**: Blacklist of blocked domains
 

@@ -39,4 +39,4 @@ xsetroot -solid blue
 sleep 2
 
 # Start MCP server connected to Chrome's CDP endpoint
-npx -y @playwright/mcp --config /config/config.json
+npx -y @playwright/mcp --config /config/config.json --host 0.0.0.0 --port 3002 --allowed-hosts *

@@ -19,14 +19,10 @@ Both Chrome and the MCP server run **inside the same container**, so they commun
 
 ## Configuration
 
-- **config.json location**: `/config/config.json` (mounted volume)
-- **cdpEndpoint**: Must be `http://localhost:9222` (same container)
-- **allowExternalConnections**: Must be `true` to accept connections from outside the container
-- **host**: Must be `0.0.0.0` to bind to all interfaces inside container
+See `/config/config.json` for all settings.
 
 ## Common Issues
 
 **"Access is only allowed at localhost:3002"**
-- Solution: Ensure `allowExternalConnections: true` in config.json
-- The MCP server host is already set to `0.0.0.0`
-- After config changes, rebuild the container
+- Solution: Verify `/config/config.json` has correct settings and command-line args in `/defaults/autostart`
+- After changes, rebuild and redeploy the container on Dokploy
