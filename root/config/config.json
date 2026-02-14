@@ -9,7 +9,8 @@
     },
     "server": {
         "port": 3002,
-        "host": "0.0.0.0"
+        "host": "0.0.0.0",
+        "allowExternalConnections": true
     },
     "capabilities": ["pdf", "vision"],
     "outputDir": "/config/output",

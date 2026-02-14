@@ -10,7 +10,6 @@ ENV START_DOCKER=false
 ENV NO_DECOR=true
 
 # Suppress Chrome/DBus errors
-ENV DBUS_SESSION_BUS_ADDRESS=/dev/null
 ENV CHROME_DEVEL_SANDBOX=/usr/local/sbin/chrome-devel-sandbox
 ENV DISPLAY=:1
 
