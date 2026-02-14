@@ -54,6 +54,7 @@ docker run -d \
   -p 3000:3000 \
   -p 3001:3001 \
   -p 3002:3002 \
+  -p 9222:9222 \
   -v $(pwd)/config:/config \
   ghcr.io/bradsjm/chrome-mcp:latest
 ```
@@ -79,6 +80,16 @@ For most MCP clients, add this configuration to connect to the containerized ser
 
 - SSE: `http://localhost:3002/sse`
 - Streaming HTTP: `http://localhost:3002/mcp`
+
+### Chrome DevTools Protocol (CDP) Support
+
+Chrome automatically starts with CDP enabled on port 9222. The MCP server connects to this CDP endpoint, allowing for:
+
+- Direct browser automation via CDP
+- Integration with external tools that support CDP
+- Enhanced debugging capabilities
+
+The CDP endpoint is accessible at `http://localhost:9222` when the container is running.
 
 ## Configuration
 

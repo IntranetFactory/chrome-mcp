@@ -31,5 +31,5 @@ RUN npm install -g @playwright/mcp@latest && \
 # Copy files
 COPY /root /
 
-EXPOSE 3002
+EXPOSE 3002 9222
 VOLUME /config

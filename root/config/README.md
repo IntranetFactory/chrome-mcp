@@ -39,7 +39,19 @@ Directory where automation results, screenshots, PDFs, and other outputs are sav
 ### Browser Settings
 - **`isolated: true`**: Each browser session runs in isolation
 - **`headless: false`**: Browser runs with UI visible (important for desktop viewing)
+- **`cdpEndpoint`**: Chrome DevTools Protocol endpoint URL (e.g., `http://localhost:9222`)
 - **`contextOptions`**: Additional Playwright browser context options
+
+### CDP Configuration
+```json
+{
+    "browser": {
+        "cdpEndpoint": "http://localhost:9222"
+    }
+}
+```
+
+The MCP server can connect to an existing Chrome instance via CDP (Chrome DevTools Protocol). This is useful when you want the browser to persist across MCP server restarts or when integrating with external tools.
 
 ### Server Settings
 - **`port: 3002`**: MCP server listens on this port

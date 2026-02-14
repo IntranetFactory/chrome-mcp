@@ -2,6 +2,11 @@ services:
   chrome-mcp:
     image: ghcr.io/bradsjm/chrome-mcp:latest
     container_name: chrome-mcp
+    ports:
+      - "3000:3000"  # VNC HTTP
+      - "3001:3001"  # VNC HTTPS
+      - "3002:3002"  # MCP Server
+      - "9222:9222"  # Chrome CDP
     volumes:
       - ./config:/config
     restart: unless-stopped

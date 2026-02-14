@@ -1,2 +1,16 @@
 xsetroot -solid blue
-npx -y @playwright/mcp --config /config/config.json
+
+# Start Chrome with CDP enabled on port 9222
+/usr/bin/google-chrome \
+  --remote-debugging-port=9222 \
+  --remote-debugging-address=0.0.0.0 \
+  --no-first-run \
+  --no-default-browser-check \
+  --disable-dev-shm-usage \
+  --no-sandbox &
+
+# Wait for Chrome to start
+sleep 2
+
+# Start MCP server connected to Chrome's CDP endpoint
+npx -y @playwright/mcp --config /config/config.json --cdp-endpoint http://localhost:9222
