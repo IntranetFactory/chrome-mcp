@@ -19,7 +19,15 @@ Both Chrome and the MCP server run **inside the same container**, so they commun
 
 ## Configuration
 
-See `/config/config.json` for all settings.
+**All configuration is done via `/config/config.json` - NOT via CLI switches.**
+
+The config.json file controls:
+- Browser settings (CDP endpoint, launch options)
+- Server settings (port, host, allowedHosts, trustProxy)
+- Network settings (allowedOrigins, blockedOrigins)
+- Capabilities and output directories
+
+**For proxy/SSL termination:** Set `"trustProxy": true` in the `server` section of config.json.
 
 ## Common Issues
 
