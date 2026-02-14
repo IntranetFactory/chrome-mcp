@@ -8,6 +8,9 @@ services:
       # - "3001:3001"  # VNC HTTPS
       # - "3002:3002"  # MCP Server
       # - "9222:9222"  # Chrome CDP
+    expose:
+      - "3000"  # VNC HTTP      
+      - "3002"  # MCP Server
     volumes:
       - ./root/config:/config
     restart: unless-stopped
