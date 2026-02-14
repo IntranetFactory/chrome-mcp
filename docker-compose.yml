@@ -9,7 +9,7 @@ services:
       # - "3002:3002"  # MCP Server
       # - "9222:9222"  # Chrome CDP
     volumes:
-      - ./config:/config
+      - ./root/config:/config
     restart: unless-stopped
     environment:
       - LANG=C.UTF-8
